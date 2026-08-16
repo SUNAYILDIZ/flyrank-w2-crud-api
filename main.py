@@ -34,7 +34,7 @@ async def get_task(id: int):
 async def create_task(task: Task):
     if not task.title :
         return JSONResponse(status_code=400, content={"error": "Task title is required"})
-    new_task = {"id": len(tasks) + 1, "title": task.title, "done": False}
+    new_task = {"id":max ((t["id"] for t in tasks),default = 0)+1 ,"title": task.title, "done": False}
     tasks.append(new_task)
     return new_task
 @app.put("/tasks/{id}")
