@@ -27,7 +27,7 @@ async def get_task(id: int):
     for task in tasks:
         if task["id"] == id:
             return task
-    # buraya henüz bir şey yazma, bir sonraki adımda 404 ekleyeceğiz
+    
     return JSONResponse(status_code=404, content={"error": f"Task {id} not found"})
 
 @app.post("/tasks", status_code=201)
