@@ -1,31 +1,34 @@
 # CRUD API
-CRUD'un açılımı nedir ? 
-Create Read Update Delete yani bizim bildiğim to do list yeni bir görev yarat görevleri listele görevi güncelle ve görevi sil mantığımız budur.
-## Veriler Nerde Tutuluyor ?
-Veriler ramde tutuluyor bu yüzden sunucuyu yeniden çalıştırmada sadece orjinal listeyi görebiliriz.Yani yaptığımız değişiklikler gitmiş olacak.
-## Teknolojiler
+## What is CRUD?
+Create, Read, Update, Delete — the classic to-do list logic: create a new 
+task, list tasks, update a task, and delete a task.
+## Where is the data stored?
+Data is stored in memory (RAM), so when the server restarts, only the 
+original seed list will be visible — any changes made during runtime 
+will be lost.
+## Technologies
 - Python 3.12.10
 - FastAPI
 - Uvicorn
 
-## Endpoint'ler
-| Method | Endpoint | Açıklama |
+## Endpoints
+| Method | Endpoint |  Description |
 |--------|----------|----------|
-| GET | / | API bilgisi |
-| GET | /health | Sağlık kontrolü |
-| GET | /tasks | Tüm görevleri listele |
-| POST | /tasks | Yeni görev yarat |
-| GET | /tasks/{id} | Aranılan görevi getir |
-| PUT | /tasks/{id} | Görevin istenilen alanını güncellemek |
-| DELETE | /tasks/{id} | İstenilen görevi silme |
+| GET | / | API info |
+| GET | /health | Health check  |
+| GET | /tasks | List all tasks |
+| POST | /tasks | Create a new task |
+| GET | /tasks/{id} | Get a specific task |
+| PUT | /tasks/{id} | Update a task's fields |
+| DELETE | /tasks/{id} | Delete a task |
  
-## Örnek Kullanım
+## Example Usage
 
 ```bash
 curl -i -X DELETE http://localhost:8000/tasks/99
 ```
 
-**Yanıt:**
+**Response:**
 
 ```
 HTTP/1.1 404 Not Found
@@ -37,15 +40,15 @@ content-type: application/json
 ```
 ## Swagger UI
 ![Swagger UI](swagger-screenshot.png)
-## Kurulum ve Çalıştırma
+## Installation & Running
 
-1. Depoyu Klonla:
+1. Clone the repository:
 ```bash
 git clone https://github.com/SUNAYILDIZ/flyrank-w2-crud-api.git 
 cd flyrank-w2-crud-api
 ```
 
-2. Sanal Ortam Oluştur ve aktive et:
+2. Create and activate a virtual environment:
 ```bash
 python -m venv venv
 # Windows:
@@ -54,17 +57,17 @@ venv\Scripts\Activate.ps1
 source venv/bin/activate
 ```
 
-3. Bağımlılıkları kur:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Sunucuyu başlat:
+4. Start the server:
 ```bash
 uvicorn main:app --reload
 ```
 
-5. Tarayıcıda aç:  `http://localhost:8000`
+5. Open in browser:  `http://localhost:8000`
 
 
 
