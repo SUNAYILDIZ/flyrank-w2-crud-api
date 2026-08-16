@@ -36,7 +36,7 @@ content-type: application/json
 {"error":"Task 99 not found"}
 ```
 ## Swagger UI
-![Swagger UI] (swagger-screenshot.png)
+![Swagger UI](swagger-screenshot.png)
 ## Kurulum ve Çalıştırma
 
 1. Depoyu Klonla:
